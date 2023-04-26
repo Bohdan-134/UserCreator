@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="header-title">Кабінет</h1>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#" class="header-user-photo-wrapp">
+                                    <img src="./icons/user_fill.svg" alt="user">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="user-info-block-wrapp">
+                                    <div class="user-avatar-wrapp">
+                                        <img src="./icons/user_fill.svg" alt="user">
+                                    </div>
+                                    <div class="user-name">Богдан Качмар</div>
+                                    <a href="tel:+380950367016" class="user-phone">+380950367016</a>
+                                    <a href="mailto:bkachmar1@gmail.com" class="user-mail">bkachmar1@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button id="create-user" class="btn-user" type="button" data-toggle="modal" data-target="#create-user-modal">
+                                            <div class="wrapp-btn-img">
+                                                <img src="./icons/add.svg" alt="plus">
+                                            </div>
+                                            <span class="btn-user-text">Створити користувача</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button id="generate-user" class="btn-user" type="button" data-toggle="modal" data-target="#generate-user-modal">
+                                            <div class="wrapp-btn-img">
+                                                <img src="./icons/generate.svg" alt="generate">
+                                            </div>
+                                            <span class="btn-user-text">Згенерувати користувача</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="table-title">Останні зареєстровані користувачі :</h2>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Аватар</th>
+                                            <th>Ім'я та прізвище</th>
+                                            <th>Електронна адреса</th>
+                                            <th>Номер телефону</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="./icons/user_fill.svg" alt="avatar"></td>
+                                            <td>Іван Іванов</td>
+                                            <td class="table-user-mail"><a href="mailto:ivan@example.com">ivan@example.com</a></td>
+                                            <td class="table-user-phone"><a href="tel:+380123456789">+380123456789</a></td>
+                                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#user-details">Детальніше</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="./icons/user_fill.svg" alt="avatar"></td>
+                                            <td>Петро Петров</td>
+                                            <td class="table-user-mail"><a href="mailto:petro@example.com">petro@example.com</a></td>
+                                            <td class="table-user-phone"><a href="tel:+380987654321">+380987654321</a></td>
+                                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#user-details">Детальніше</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- modal -->
+
+    <!-- modal-create-user -->
+    <div class="modal fade modal-crate-user" id="create-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Створити користувача</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="create-user-form">
+                        <div class="form-group create-user-form-avatar">
+                            <label for="avatar"><img src="./icons/add.svg" alt="plus"></label>
+                            <input type="file" class="form-control" id="avatar">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder="Ім'я">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="surname" placeholder="Прізвище">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Електронна адреса">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="phone" placeholder="Номер телефону">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="gender">
+                            <option>Чоловік</option>
+                            <option>Жінка</option>
+                            <option>Інше</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="address" rows="3" placeholder="Адреса проживання"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Створити користувача</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal-generate-user -->
+
+    <div class="modal fade modal-generate-user" id="generate-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+
+</html>
