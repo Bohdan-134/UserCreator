@@ -1,0 +1,28 @@
+.header .header-title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 37px;
+    color: black;
+}
+
+.header .header-user-photo-wrapp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F39E73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    transition: .3s;
+}
+
+.header .header-user-photo-wrapp:hover {
+    background-color: #e19068;
+}
+
+@media screen and (max-width: 991px) {
+    .header .header-user-photo-wrapp {
+        display: none;
+    }
+}

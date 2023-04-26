@@ -1,0 +1,28 @@
+.modal-info-user .modal-content {
+    background-color: #F39E73;
+    border: none;
+    text-align: center;
+}
+
+.modal-info-user .modal-content .modal-body img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.modal-info-user .modal-content .modal-body #user-fullname {
+    margin: 20px 0 10px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #fff;
+}
+
+.modal-info-user .modal-content .modal-body #user-email,
+.modal-info-user .modal-content .modal-body #user-phone,
+.modal-info-user .modal-content .modal-body #user-address {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.7);
+}

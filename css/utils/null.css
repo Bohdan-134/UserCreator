@@ -94,3 +94,15 @@ h6 {
     padding: 0;
     margin: 0;
 }
+
+@media screen and (min-width: 1500px) {
+    body {
+        background-color: #7162bb;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    body {
+        align-items: flex-start;
+    }
+}

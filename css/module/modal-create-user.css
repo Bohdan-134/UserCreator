@@ -1,0 +1,48 @@
+.modal-crate-user .modal-content {
+    background-color: #378474;
+    border: none;
+}
+
+.create-user-form .form-group .form-control {
+    border: none;
+    background-color: transparent !important;
+    border-bottom: 1px solid #FFFFFF;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #fff;
+}
+
+.create-user-form .form-group .form-control::placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #ffffffb9;
+}
+
+.create-user-form .create-user-form-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-user-form .create-user-form-avatar label {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create-user-form .create-user-form-avatar input {
+    display: none;
+}
+
+.create-user-form button {
+    color: #378474;
+}

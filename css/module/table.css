@@ -1,0 +1,62 @@
+.table-wrapp {
+    max-height: 550px;
+    overflow-y: scroll;
+}
+
+.table-title {
+    margin-bottom: 45px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000;
+}
+
+.table thead tr th {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #000;
+    border-bottom: 1px solid #000000;
+    vertical-align: middle;
+}
+
+.table tbody tr td,
+.table tbody tr td a,
+.table tbody tr td button {
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+}
+
+.table tbody tr td a {
+    transition: .3s;
+}
+
+.table tbody tr td a:hover {
+    color: #F39E73;
+}
+
+.table tbody tr td {
+    vertical-align: middle;
+}
+
+.table tbody tr td img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #F39E73;
+    border-radius: 50%;
+}
+
+.table tbody tr td button {
+    background-color: #F39E73;
+    border: none;
+    color: #fff;
+    transition: .3s;
+}
+
+.table tbody tr td button:hover,
+.table tbody tr td button:active,
+.table tbody tr td button:focus {
+    border: none;
+    background-color: #e19068;
+}

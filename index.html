@@ -76,33 +76,25 @@
                                 <h2 class="table-title">Останні зареєстровані користувачі :</h2>
                             </div>
                             <div class="col-md-12">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Аватар</th>
-                                            <th>Ім'я та прізвище</th>
-                                            <th>Електронна адреса</th>
-                                            <th>Номер телефону</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><img src="./icons/user_fill.svg" alt="avatar"></td>
-                                            <td>Іван Іванов</td>
-                                            <td class="table-user-mail"><a href="mailto:ivan@example.com">ivan@example.com</a></td>
-                                            <td class="table-user-phone"><a href="tel:+380123456789">+380123456789</a></td>
-                                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#user-details">Детальніше</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="./icons/user_fill.svg" alt="avatar"></td>
-                                            <td>Петро Петров</td>
-                                            <td class="table-user-mail"><a href="mailto:petro@example.com">petro@example.com</a></td>
-                                            <td class="table-user-phone"><a href="tel:+380987654321">+380987654321</a></td>
-                                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#user-details">Детальніше</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="table-wrapp">
+                                    <div class="spinner-border text-success" role="status" id="loader">
+                                        <span>Loading...</span>
+                                    </div>
+                                    <table class="table" id="users-list">
+                                        <thead>
+                                            <tr>
+                                                <th>Аватар</th>
+                                                <th>Ім'я та прізвище</th>
+                                                <th>Електронна адреса</th>
+                                                <th>Номер телефону</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -121,10 +113,12 @@
                     <h4 class="modal-title" id="myModalLabel">Створити користувача</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="create-user-form">
+                    <form class="create-user-form" id="create-user-form">
                         <div class="form-group create-user-form-avatar">
-                            <label for="avatar"><img src="./icons/add.svg" alt="plus"></label>
-                            <input type="file" class="form-control" id="avatar">
+                            <label for="avatar" id="avatar-preview">
+                                <img src="./icons/add.svg" alt="plus">
+                            </label>
+                            <input type="file" class="form-control" id="avatar" onchange="previewAvatar()">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" placeholder="Ім'я">
@@ -148,7 +142,7 @@
                         <div class="form-group">
                             <textarea class="form-control" id="address" rows="3" placeholder="Адреса проживання"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Створити користувача</button>
+                        <button type="submit" class="btn btn-primary btn-user">Створити користувача</button>
                     </form>
                 </div>
             </div>
@@ -156,20 +150,54 @@
     </div>
 
     <!-- modal-generate-user -->
-
     <div class="modal fade modal-generate-user" id="generate-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Згенерувати користувача</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <form class="generate-user-form">
+                        <div class="form-group">
+                            <select class="form-control" id="gender" name="gender">
+                                <option value="">Оберіть гендер</option>
+                                <option value="male">Чоловік</option>
+                                <option value="female">Жінка</option>
+                                <option value="other">Інше</option>
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-user">Генерувати</button>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal-info-user -->
+    <div class="modal fade modal-info-user" id="user-details" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Информация о пользователе</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <img id="user-avatar" src="">
+                        </div>
+                        <div class="col-8">
+                            <h3 id="user-fullname"></h3>
+                            <p id="user-email"></p>
+                            <p id="user-phone"></p>
+                            <p id="user-address"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -177,6 +205,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

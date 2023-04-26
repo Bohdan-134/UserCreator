@@ -1,0 +1,32 @@
+.modal-generate-user .modal-content {
+    background-color: #7162BB;
+    border: none;
+}
+
+.generate-user-form select {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.generate-user-form select:focus {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+
+.generate-user-form button {
+    color: #7162BB;
+    margin-top: 25px;
+}
+
+.generate-user-form button:hover {
+    color: #fff;
+}

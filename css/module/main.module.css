@@ -1,4 +1,5 @@
+@import './header.css';
 @import './table.css';
-@import './module-generate-user.css';
-@import './module-create-user.css';
+@import './modal-create-user.css';
+@import './modal-generate-user.css';
 @import './modal-detail-user.css';
