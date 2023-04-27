@@ -15,6 +15,7 @@
 
 <body>
     <div class="wrapper">
+        <div id="notification"></div>
         <header class="header">
             <div class="container">
                 <div class="row">
@@ -77,8 +78,8 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="table-wrapp">
-                                    <div class="spinner-border text-success" role="status" id="loader">
-                                        <span>Loading...</span>
+                                    <div class="loading-table text-center">
+                                        <span class="glyphicon glyphicon-refresh spinning"></span>
                                     </div>
                                     <table class="table" id="users-list">
                                         <thead>
@@ -121,16 +122,16 @@
                             <input type="file" class="form-control" id="avatar" onchange="previewAvatar()">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Ім'я">
+                            <input type="text" class="form-control" id="name" placeholder="Ім'я" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="surname" placeholder="Прізвище">
+                            <input type="text" class="form-control" id="surname" placeholder="Прізвище" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Електронна адреса">
+                            <input type="email" class="form-control" id="email" placeholder="Електронна адреса" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" id="phone" placeholder="Номер телефону">
+                            <input type="text" class="form-control" data-inputmask="'mask': '+38(999)999-99-99'" class="form-contro phone" id="phone" placeholder="Номер телефону" required>
                         </div>
                         <div class="form-group">
                             <select class="form-control" id="gender">
@@ -162,7 +163,7 @@
                 <div class="modal-body">
                     <form class="generate-user-form">
                         <div class="form-group">
-                            <select class="form-control" id="gender" name="gender">
+                            <select class="form-control" id="gender" name="gender" required>
                                 <option value="">Оберіть гендер</option>
                                 <option value="male">Чоловік</option>
                                 <option value="female">Жінка</option>
@@ -204,8 +205,11 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/generate-user.js"></script>
+    <script type="module" src="./js/create-user.js"></script>
 </body>
 
 </html>

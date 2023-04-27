@@ -1,4 +1,4 @@
-# DocService
+# UserCreator
 
 <img src="./readme.png">
 
