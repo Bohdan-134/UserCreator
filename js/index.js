@@ -28,17 +28,5 @@ $(document).ready(function() {
             console.error(error);
         },
     });
+
 });
-
-function previewAvatar() {
-    var file = $('#avatar')[0].files[0];
-    var reader = new FileReader();
-
-    reader.addEventListener('load', function() {
-        $('#avatar-preview').html(`<img src="${reader.result}">`);
-    }, false);
-
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
